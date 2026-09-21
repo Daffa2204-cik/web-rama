@@ -1,0 +1,539 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rama Zuhair | My Football Life</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #06140d;
+            color: white;
+        }
+
+        /* NAVBAR */
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 8%;
+            background: #071b10;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            border-bottom: 1px solid #1c4930;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #43ff8b;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #43ff8b;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            align-items: center;
+            padding: 70px 8%;
+            background:
+                linear-gradient(90deg, #04150df2, #04150d88),
+                url("https://images.unsplash.com/photo-1508098682722-e99c643e7f0b?auto=format&fit=crop&w=1800&q=90");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+            animation: muncul 1.2s ease;
+        }
+
+        .hero h3 {
+            color: #43ff8b;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(40px, 7vw, 75px);
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: #43ff8b;
+        }
+
+        .hero p {
+            color: #d0e0d5;
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .btn {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 15px 30px;
+            border-radius: 30px;
+            background: #43ff8b;
+            color: #06140d;
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-5px);
+            background: white;
+        }
+
+        /* SECTION */
+        section {
+            padding: 90px 8%;
+        }
+
+        .judul {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .judul span {
+            color: #43ff8b;
+        }
+
+        .deskripsi {
+            text-align: center;
+            color: #a9c0b0;
+            margin-bottom: 45px;
+            line-height: 1.8;
+        }
+
+        /* ABOUT */
+        .about {
+            background: #0b2114;
+        }
+
+        .about-box {
+            max-width: 800px;
+            margin: auto;
+            text-align: center;
+            line-height: 2;
+            color: #d0e0d5;
+            font-size: 17px;
+        }
+
+        /* PROFILE */
+        .profile {
+            text-align: center;
+            background: #06140d;
+        }
+
+        .profile-card {
+            max-width: 650px;
+            margin: auto;
+            padding: 35px;
+            background: #10291a;
+            border: 1px solid #28563a;
+            border-radius: 20px;
+            transition: 0.3s;
+        }
+
+        .profile-card:hover {
+            transform: translateY(-5px);
+            border-color: #43ff8b;
+        }
+
+        .profile-icon {
+            font-size: 75px;
+            margin-bottom: 20px;
+        }
+
+        .profile-card h3 {
+            font-size: 28px;
+            color: #43ff8b;
+            margin-bottom: 15px;
+        }
+
+        .profile-card p {
+            color: #c7d9cc;
+            line-height: 1.8;
+        }
+
+        /* HOBI */
+        .hobi {
+            background: #0b2114;
+        }
+
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #10291a;
+            border: 1px solid #28563a;
+            padding: 30px;
+            border-radius: 18px;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            border-color: #43ff8b;
+            box-shadow: 0 10px 30px #43ff8818;
+        }
+
+        .icon {
+            font-size: 50px;
+            margin-bottom: 20px;
+        }
+
+        .card h3 {
+            color: #43ff8b;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: #c7d9cc;
+            line-height: 1.8;
+        }
+
+        /* FOOTBALL */
+        .football {
+            background:
+                linear-gradient(#06140de8, #06140df0),
+                url("https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1600&q=85");
+
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+        }
+
+        .football p {
+            max-width: 750px;
+            margin: auto;
+            color: #d0e0d5;
+            line-height: 2;
+            font-size: 17px;
+        }
+
+        /* CITA-CITA */
+        .dream {
+            text-align: center;
+            background: #0b2114;
+        }
+
+        .dream-box {
+            max-width: 700px;
+            margin: auto;
+            background: #10291a;
+            padding: 35px;
+            border-radius: 20px;
+            border: 1px solid #28563a;
+        }
+
+        .dream-box h3 {
+            color: #43ff8b;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .dream-box p {
+            color: #c7d9cc;
+            line-height: 1.8;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #030b06;
+            padding: 30px;
+            text-align: center;
+            color: #91a99a;
+        }
+
+        /* ANIMASI */
+        @keyframes muncul {
+            from {
+                opacity: 0;
+                transform: translateY(35px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @media (max-width: 600px) {
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 0 6px;
+                font-size: 13px;
+            }
+
+            section {
+                padding: 70px 6%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav>
+        <div class="logo">⚽ RAMA.</div>
+
+        <div>
+            <a href="#home">Home</a>
+            <a href="#tentang">Tentang</a>
+            <a href="#hobi">Hobi</a>
+            <a href="#cita">Cita-Cita</a>
+        </div>
+    </nav>
+
+    <!-- BERANDA -->
+    <header class="hero" id="home">
+        <div class="hero-content">
+
+            <h3>WELCOME TO MY WEBSITE</h3>
+
+            <h1>
+                Halo, Saya<br>
+                <span>Rama Zuhair</span>
+            </h1>
+
+            <p>
+                Saya adalah pecinta sepak bola.
+                Saya suka bermain bola bersama teman-teman
+                dan menikmati setiap momen di lapangan.
+                Inilah cerita singkat tentang diri saya.
+            </p>
+
+            <a href="#tentang" class="btn">
+                Kenali Saya →
+            </a>
+
+        </div>
+    </header>
+
+    <!-- TENTANG SAYA -->
+    <section id="tentang" class="about">
+
+        <h2 class="judul">
+            Tentang <span>Saya</span>
+        </h2>
+
+        <p class="deskripsi">
+            Sedikit cerita tentang Rama Zuhair.
+        </p>
+
+        <div class="about-box">
+            Halo semuanya! Perkenalkan, nama saya Rama Zuhair.
+            Saya memiliki hobi bermain sepak bola.
+            Saya senang bermain bersama teman-teman,
+            belajar hal baru, dan menghabiskan waktu
+            dengan kegiatan yang menyenangkan.
+
+            <br><br>
+
+            Bagi saya, sepak bola bukan hanya olahraga,
+            tetapi juga cara untuk belajar kerja sama,
+            disiplin, dan sportivitas.
+        </div>
+
+    </section>
+
+    <!-- PROFIL -->
+    <section class="profile">
+
+        <h2 class="judul">
+            My <span>Profile</span>
+        </h2>
+
+        <p class="deskripsi">
+            Kenali saya lebih dekat!
+        </p>
+
+        <div class="profile-card">
+
+            <div class="profile-icon">👦</div>
+
+            <h3>Rama Zuhair</h3>
+
+            <p>
+                Nama: Rama Zuhair<br>
+                Hobi: Bermain Sepak Bola<br>
+                Olahraga Favorit: Sepak Bola<br>
+                Motto: Terus berusaha dan jangan menyerah!
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- HOBI -->
+    <section class="hobi" id="hobi">
+
+        <h2 class="judul">
+            Hobi <span>Saya</span>
+        </h2>
+
+        <p class="deskripsi">
+            Kegiatan yang paling saya sukai.
+        </p>
+
+        <div class="cards">
+
+            <div class="card">
+                <div class="icon">⚽</div>
+
+                <h3>Bermain Bola</h3>
+
+                <p>
+                    Saya suka bermain sepak bola bersama
+                    teman-teman. Saya menikmati permainan,
+                    mencetak gol, dan bekerja sama dalam tim.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🏃</div>
+
+                <h3>Berolahraga</h3>
+
+                <p>
+                    Saya senang melakukan aktivitas fisik
+                    agar tubuh tetap aktif dan bisa
+                    menikmati kegiatan olahraga.
+                </p>
+            </div>
+
+            <div class="card">
+                <div class="icon">🤝</div>
+
+                <h3>Bermain Bersama Teman</h3>
+
+                <p>
+                    Saya senang menghabiskan waktu bersama
+                    teman-teman dan menciptakan
+                    pengalaman yang menyenangkan.
+                </p>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- SEPAK BOLA -->
+    <section class="football">
+
+        <h2 class="judul">
+            My Football <span>Life</span>
+        </h2>
+
+        <p>
+            Sepak bola adalah olahraga yang sangat saya sukai.
+            Saat bermain bola, saya belajar tentang kerja sama,
+            kedisiplinan, dan semangat pantang menyerah.
+
+            <br><br>
+
+            Saya ingin terus mengembangkan kemampuan bermain
+            sepak bola dan menjadi pemain yang lebih baik.
+            Bagi saya, yang terpenting adalah bermain dengan
+            semangat, sportif, dan menikmati permainan.
+        </p>
+
+    </section>
+
+    <!-- CITA-CITA -->
+    <section class="dream" id="cita">
+
+        <h2 class="judul">
+            Cita-Cita <span>Saya</span>
+        </h2>
+
+        <p class="deskripsi">
+            Mimpi dan harapan untuk masa depan.
+        </p>
+
+        <div class="dream-box">
+
+            <div class="icon">🏆</div>
+
+            <h3>Menjadi Pemain Sepak Bola</h3>
+
+            <p>
+                Saya ingin terus belajar dan berlatih
+                agar kemampuan bermain sepak bola saya
+                semakin berkembang.
+
+                Saya berharap suatu hari nanti bisa
+                meraih cita-cita dan membanggakan
+                keluarga melalui usaha dan kerja keras.
+            </p>
+
+        </div>
+
+    </section>
+
+    <!-- PENUTUP -->
+    <section class="football">
+
+        <h2 class="judul">
+            Terima <span>Kasih!</span>
+        </h2>
+
+        <p>
+            Terima kasih sudah mengunjungi website pribadi saya.
+            Tetap semangat, terus berusaha, dan jangan lupa
+            menikmati setiap permainan sepak bola!
+            ⚽
+        </p>
+
+        <a href="#home" class="btn">
+            Kembali ke Atas ↑
+        </a>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+        <p>
+            © 2026 Rama Zuhair | My Football Website ⚽
+        </p>
+    </footer>
+
+</body>
+</html>
